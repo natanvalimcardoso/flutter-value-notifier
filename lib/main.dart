@@ -1,8 +1,6 @@
+import 'package:flutter/material.dart';
+import 'myapp.dart';
+
 void main(){
-  var func = (){
-    print('A');
-  };
-  func();
-  func();
-  func();
+  runApp(MyApp());
 }
