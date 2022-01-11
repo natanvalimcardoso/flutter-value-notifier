@@ -9,29 +9,25 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  final controller = HomeController();
-  int get _counter => controller.counter;
-
-  @override
-  void initState() {
-    super.initState();
-    controller.counter$.addListener(() {
-      setState(() {});
-    });
-  }
+  final counter = Counter();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: Center(
-        child: Text('Flutterando $_counter'),
+        child: ValueListenableBuilder<int>(
+          valueListenable: counter, 
+          builder: (context, value, child) {
+            return Text('Flutterando $value');
+          },// Estou puxando o value do counter
+        )
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: controller.increment,
+        child: const Icon(Icons.add),
+        onPressed: counter.increment,
       ),
     );
   }
