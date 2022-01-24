@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
           valueListenable: counter, 
           builder: (context, value, child) {
             return Text('Flutterando $value');
-          },// Estou puxando o value do counter
+          },
         )
       ),
       floatingActionButton: FloatingActionButton(
