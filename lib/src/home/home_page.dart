@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vallue_notifier/src/products/repositories/todo_repositories.dart';
 import './home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,5 +31,9 @@ class _HomePageState extends State<HomePage> {
         onPressed: counter.increment,
       ),
     );
+  }
+  model() async{
+    final model = await TodoRepositories().fetchProducts();
+    print(model);
   }
 }

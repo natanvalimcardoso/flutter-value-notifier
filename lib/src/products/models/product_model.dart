@@ -1,29 +1,18 @@
-import 'dart:convert';
-
 class ProductModel {
-  final String id;
-  final String title;
+  String? id;
+  String? title;
 
-  ProductModel({
-    required this.id,
-    required this.title,
-  });
+  ProductModel({this.id, this.title});
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'title': title,
-    };
+  ProductModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    title = json['title'];
   }
 
-  factory ProductModel.fromMap(Map<String, dynamic> map) {
-    return ProductModel(
-      id: map['id'] ?? '',
-      title: map['title'] ?? '',
-    );
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['title'] = this.title;
+    return data;
   }
-
-  String toJson() => json.encode(toMap());
-
-  factory ProductModel.fromJson(String source) => ProductModel.fromMap(json.decode(source));
 }
