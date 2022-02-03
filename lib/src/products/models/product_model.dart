@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_collection_literals
+
 class ProductModel {
   String? id;
   String? title;
@@ -10,9 +12,9 @@ class ProductModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['id'] = id;
+    data['title'] = title;
     return data;
   }
 }

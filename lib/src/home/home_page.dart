@@ -32,8 +32,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-  model() async{
-    final model = await TodoRepositories().fetchProducts();
-    print(model);
-  }
 }
