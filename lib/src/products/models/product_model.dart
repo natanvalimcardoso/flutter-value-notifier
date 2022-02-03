@@ -1,20 +1,32 @@
-// ignore_for_file: prefer_collection_literals
+import 'dart:convert';
 
 class ProductModel {
-  String? id;
-  String? title;
+  final String id;
+  final String title;
 
-  ProductModel({this.id, this.title});
+  const ProductModel({
+    required this.id,
+    required this.title,
+  });
 
-  ProductModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    title = json['title'];
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'title': title,
+    };
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['id'] = id;
-    data['title'] = title;
-    return data;
+  factory ProductModel.fromMap(Map<String, dynamic> map) {
+    return ProductModel(
+      id: map['id'] ?? '',
+      title: map['title'] ?? '',
+    );
   }
+
+  String toJson() => json.encode(toMap());
+
+  factory ProductModel.fromJson(String source) => ProductModel.fromMap(json.decode(source));
+
+  @override
+  String toString() => 'ProductModel(id: $id, title: $title)';
 }

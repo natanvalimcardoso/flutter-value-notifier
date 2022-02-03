@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.vallue_notifier">
+    package="com.example.value_notifier_class">
    <application
-        android:label="vallue_notifier"
+        android:label="value_notifier_class"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

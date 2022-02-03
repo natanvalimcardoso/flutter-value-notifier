@@ -25,6 +25,10 @@
         {
             "title": "Ionic",
             "id": "2"
+        },
+        {
+            "title": "Angular",
+            "id": "3"
         }
     ]
 }

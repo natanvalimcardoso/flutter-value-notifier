@@ -1,6 +1,6 @@
 {
-    "name": "vallue_notifier",
-    "short_name": "vallue_notifier",
+    "name": "value_notifier_class",
+    "short_name": "value_notifier_class",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

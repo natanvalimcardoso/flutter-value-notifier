@@ -1,4 +1,4 @@
-name: Value Nottifier
+name: Test
 port: 3031
 db: db.json
 statics: public/
